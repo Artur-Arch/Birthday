@@ -1,8 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { PartyPopper } from 'lucide-react';
 
 const HappyBirthday: React.FC = () => {
-  const text = "Happy Birthday!";
+  const text = "Happy Birthday SAWA!";
   
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -96,7 +97,7 @@ const HappyBirthday: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 3, duration: 0.8 }}
       >
-        🎉 Желаем счастья и радости! 🎉
+        <PartyPopper className="inline-block w-8 h-8 mr-2" /> Саша, с днём рождения!  Желаю здоровья, успехов и счастья во всём!  Пусть всё задуманное сбывается!  Желаю счастья и радости! <PartyPopper className="inline-block w-8 h-8 ml-2" />
       </motion.p>
     </div>
   );

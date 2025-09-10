@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Cake as CakeIcon, Gift, PartyPopper, Star, Sparkles } from 'lucide-react';
 import HappyBirthday from './components/HappyBirthday';
 import Cake from './components/Cake';
 import Confetti from './components/Confetti';
@@ -56,14 +57,20 @@ function App() {
           <Cake />
         </motion.div>
 
-        {/* Дополнительные эмодзи */}
+        {/* Дополнительные иконки lucide-react */}
         <motion.div
           className="flex space-x-4 mt-8 text-4xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 3.5, duration: 0.8 }}
         >
-          {['🎂', '🎈', '🎁', '🎊', '🥳'].map((emoji, index) => (
+          {[
+            <CakeIcon key="cake" className="w-10 h-10 text-red-300" />,
+            <Star key="star" className="w-10 h-10 text-yellow-300" />,
+            <Gift key="gift" className="w-10 h-10 text-red-600" />,
+            <PartyPopper key="party" className="w-10 h-10 text-gray-500" />,
+            <Sparkles key="sparkles" className="w-10 h-10 text-yellow-400" />
+          ].map((icon, index) => (
             <motion.span
               key={index}
               className="inline-block"
@@ -77,7 +84,7 @@ function App() {
                 delay: Math.random() * 2 + 4,
               }}
             >
-              {emoji}
+              {icon}
             </motion.span>
           ))}
         </motion.div>
